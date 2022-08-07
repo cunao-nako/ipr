@@ -28,4 +28,6 @@ coverage
 *.sw?
 
 *.d.ts
+!shims-vue.d.ts
 *.js
+!.eslintrc.js
