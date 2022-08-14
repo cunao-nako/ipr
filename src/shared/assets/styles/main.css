@@ -44,28 +44,6 @@ main {
     line-height: 1.75rem;
 }
 
-#form-container {
-    border-radius: 8px;
-    border: 1px solid #d3d3d3;
-    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
-    0 2px 6px 2px rgba(60, 64, 67, 0.149);
-    margin: 32px auto 16px auto;
-    max-width: 496px;
-    transition-duration: 0.218s;
-    transition-property: background, border, opacity, box-shadow, transform;
-    transition-timing-function: ease-in;
-}
-
-#form {
-    position: relative;
-    border: none;
-    margin: 1px;
-    border-radius: 8px;
-    transition-duration: 0.218s;
-    transition-property: background, border, opacity, box-shadow, transform;
-    transition-timing-function: ease-in;
-}
-
 .form-open {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
@@ -74,20 +52,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-#note-text {
-    width: calc(100% - 10px);
-    min-height: 43px;
-    margin: 0 5px;
-    padding: 10px 10px;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.5rem;
-    letter-spacing: 0.00625em;
-    border: 0;
-    overflow: hidden;
-    position: relative;
 }
 
 .modal-title {
