@@ -1,22 +1,16 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue';
-
-const props = defineProps({
-  value: String,
-});
-
-const emit = defineEmits(['input']);
-
-const innerValue = ref(props.value || '');
-
-watchEffect(() => {
-  emit('input', innerValue.value);
-});
-
+defineProps(['modelValue', 'placeholder']);
+defineEmits(['update:modelValue']);
 </script>
 
 <template>
-  <input class="note-text" :placeholder="props.placeholder" v-model="innerValue" type="text">
+  <input
+    class="note-text"
+    :placeholder="placeholder"
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
+    type="text"
+  />
 </template>
 
 <style>
