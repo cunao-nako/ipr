@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import NotFoundPageTitle from '@/entites/not-found/title';
+import NotFoundHeader from '@/features/not-found/header';
 </script>
 
 <template>
-  <NotFoundPageTitle/>
+  <NotFoundHeader/>
 </template>
