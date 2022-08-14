@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import MainHeader from '@/features/main/header';
-import Form from '@/features/main/form';
+import NoteInput from '@/features/main/note-input';
 
 </script>
 
 <template>
   <div>
     <MainHeader/>
-    <Form/>
+    <NoteInput/>
   </div>
 </template>
