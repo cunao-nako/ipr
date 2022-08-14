@@ -25,16 +25,15 @@ const handleSubmit = () => undefined;
 </script>
 
 <template>
-  <div>
-    <form class="form-container" @keydown.esc="hideForm" @submit.prevent="handleSubmit">
-      <InputsBlock :is-visible="formIsVisible" v-model="formData" @open="showForm" @close="hideForm" @submit="handleSubmit" />
-    </form>
-    <div>
-      <h3>title: {{formData.title}}</h3>
-      <h3>text: {{formData.text}}</h3>
-    </div>
-  </div>
-
+  <form class="form-container" @keydown.esc="hideForm" @submit.prevent="handleSubmit">
+    <InputsBlock
+      :is-visible="formIsVisible"
+      v-model="formData"
+      @open="showForm"
+      @close="hideForm"
+      @submit="handleSubmit"
+    />
+  </form>
 </template>
 
 <style>
