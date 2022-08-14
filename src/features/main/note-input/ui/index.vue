@@ -12,29 +12,29 @@ const showForm = () => {
   formIsVisible.value = true;
 };
 
+const cleanFormData = () => {
+  Object.keys(formData.value).forEach((key: string) => { formData.value[key] = ''; });
+};
+
 const hideForm = () => {
-  formData.value = DEFAULT_NOTE_INPUT_MODEL;
+  cleanFormData();
   formIsVisible.value = false;
 };
 
 const handleSubmit = () => undefined;
-
 </script>
 
 <template>
-  <form class="form-container" @keydown.esc="hideForm" @submit.prevent="handleSubmit">
-    <InputsBlock
-      :form-is-visible="formIsVisible"
-      v-model="formData"
-      @open="showForm"
-      @close="hideForm"
-      @submit="handleSubmit"
-    />
-  </form>
   <div>
-    <h3>title: {{formData.title}}</h3>
-    <h3>text: {{formData.text}}</h3>
+    <form class="form-container" @keydown.esc="hideForm" @submit.prevent="handleSubmit">
+      <InputsBlock :is-visible="formIsVisible" v-model="formData" @open="showForm" @close="hideForm" @submit="handleSubmit" />
+    </form>
+    <div>
+      <h3>title: {{formData.title}}</h3>
+      <h3>text: {{formData.text}}</h3>
+    </div>
   </div>
+
 </template>
 
 <style>
