@@ -107,12 +107,6 @@ input:focus {
     align-items: center;
     flex-direction: column;
 }
-
-#form-buttons {
-    display: none;
-    text-align: right;
-}
-
 #submit-button,
 #form-close-button {
     margin: 0.2em 0;
