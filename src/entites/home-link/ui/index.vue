@@ -3,11 +3,11 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-  <RouterLink class="link" to="/">Go back</RouterLink>
+  <RouterLink class="home-link" to="/">Go back</RouterLink>
 </template>
 
 <style>
-.link, .link:visited {
+.home-link, .home-link:visited {
   color: #007bff;
 }
 </style>
