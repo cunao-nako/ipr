@@ -1,19 +1,20 @@
 <script setup lang="ts">
+import type { PropType } from 'vue';
 import { ref, watchEffect } from 'vue';
 import Input from '@/entites/input';
 import Buttons from '@/entites/buttons/ui/index.vue';
 import type { NoteInputModel } from '@/features/main/note-input/lib';
 
 const props = defineProps({
-  modelValue: Object,
-  formIsVisible: Boolean,
+  modelValue: { type: Object as PropType<NoteInputModel>, required: true },
+  isVisible: Boolean,
 });
 
 const emit = defineEmits(['update:modelValue']);
 
 const innerValue = ref<NoteInputModel>({
-  title: props.modelValue?.title,
-  text: props.modelValue?.text,
+  title: props.modelValue.title,
+  text: props.modelValue.text,
 });
 
 watchEffect(() => {
@@ -24,9 +25,9 @@ watchEffect(() => {
 
 <template>
   <div class="form">
-    <Input v-if="props.formIsVisible" placeholder="Title..." v-model="innerValue.title" />
+    <Input v-if="props.isVisible" placeholder="Title..." v-model="innerValue.title" />
     <Input placeholder="Take a note..." v-model="innerValue.text" @click="$emit('open')" />
-    <Buttons v-if="props.formIsVisible" @close="$emit('close')" @submit="$emit('submit')" />
+    <Buttons v-if="props.isVisible" @close="$emit('close')" @submit="$emit('submit')" />
   </div>
 </template>
 
