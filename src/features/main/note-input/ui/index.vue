@@ -1,27 +1,40 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import InputsBlock from '@/features/main/note-input/ui/InputsBlock.vue';
+import type { NoteInputModel } from '@/features/main/note-input/lib';
+import { DEFAULT_NOTE_INPUT_MODEL } from '@/features/main/note-input/lib';
 
 const formIsVisible = ref(false);
+
+const formData = ref<NoteInputModel>(DEFAULT_NOTE_INPUT_MODEL);
 
 const showForm = () => {
   formIsVisible.value = true;
 };
 
 const hideForm = () => {
+  formData.value = DEFAULT_NOTE_INPUT_MODEL;
   formIsVisible.value = false;
 };
 
-const handleSubmit = () => {
-  console.debug('submit');
-};
+const handleSubmit = () => undefined;
 
 </script>
 
 <template>
   <form class="form-container" @keydown.esc="hideForm" @submit.prevent="handleSubmit">
-    <InputsBlock :form-is-visible="formIsVisible" @open='showForm' @close="hideForm" @submit="handleSubmit"/>
+    <InputsBlock
+      :form-is-visible="formIsVisible"
+      v-model="formData"
+      @open="showForm"
+      @close="hideForm"
+      @submit="handleSubmit"
+    />
   </form>
+  <div>
+    <h3>title: {{formData.title}}</h3>
+    <h3>text: {{formData.text}}</h3>
+  </div>
 </template>
 
 <style>

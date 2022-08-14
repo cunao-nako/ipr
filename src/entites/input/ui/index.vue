@@ -1,11 +1,16 @@
 <script setup lang="ts">
-const props = defineProps({
-  placeholder: String,
-});
+defineProps(['modelValue', 'placeholder']);
+defineEmits(['update:modelValue']);
 </script>
 
 <template>
-  <input class="note-text" :placeholder="props.placeholder" type="text">
+  <input
+    class="note-text"
+    :placeholder="placeholder"
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
+    type="text"
+  />
 </template>
 
 <style>
