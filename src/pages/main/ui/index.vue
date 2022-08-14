@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import MainPageHeader from '@/entites/main/header';
+import MainHeader from '@/features/main/header';
 </script>
 
 <template>
-  <MainPageHeader/>
+  <MainHeader/>
 </template>
