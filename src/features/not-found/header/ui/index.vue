@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import NotFoundTitle from "@/entites/not-found-title";
-import HomeLink from "@/entites/home-link";
+import Title from '@/entites/title';
+import HomeLink from '@/entites/home-link';
+
+const titleValue = 'Page not found!';
 </script>
 
 <template>
   <div class="not-found-header">
-    <NotFoundTitle/>
+    <Title :value="titleValue"/>
     <HomeLink/>
   </div>
 </template>

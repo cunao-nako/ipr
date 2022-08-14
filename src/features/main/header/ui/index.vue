@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import MainLogo from "@/entites/main-logo";
-import MainTitle from '@/entites/main-title'
+import MainLogo from '@/entites/main-logo';
+import Title from '@/entites/title';
+
+const titleValue = 'TODO List';
 </script>
 
 <template>
   <div class="main-header">
     <MainLogo/>
-    <MainTitle/>
+    <Title :value="titleValue"/>
   </div>
 </template>
 
