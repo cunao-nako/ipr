@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import Input from '@/entites/input';
+import Buttons from '@/entites/buttons/ui/index.vue';
 
 const formIsHidden = ref(true);
 
-const toggleFormVisibility = (formVisibility: boolean) => {
-  formIsHidden.value = formVisibility;
+const showForm = () => {
+  formIsHidden.value = false;
+};
+
+const hideForm = () => {
+  formIsHidden.value = true;
 };
 
 const handleSubmit = () => {
@@ -15,19 +20,16 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <form class="form-container" @keydown.esc="toggleFormVisibility(true)" @submit.prevent="handleSubmit">
+  <form class="form-container" @keydown.esc="hideForm" @submit.prevent="handleSubmit">
 
-    <div v-if="formIsHidden" class="form" @click="toggleFormVisibility(false)">
+    <div v-if="formIsHidden" class="form" @click="showForm">
       <Input placeholder="Take a note..."/>
     </div>
 
     <div v-else class="form">
       <Input placeholder="Title..."/>
       <Input placeholder="Enter your note..."/>
-      <div class="form-buttons">
-        <input type="button" id="submit-button" value="Submit" @click="handleSubmit"/>
-        <input type="button" id="form-close-button" value="Close" @click="toggleFormVisibility(true)"/>
-      </div>
+      <Buttons @close="hideForm" @submit="handleSubmit"/>
     </div>
 
   </form>
@@ -54,9 +56,5 @@ const handleSubmit = () => {
   transition-duration: 0.218s;
   transition-property: background, border, opacity, box-shadow, transform;
   transition-timing-function: ease-in;
-}
-
-.form-buttons {
-  text-align: right;
 }
 </style>
