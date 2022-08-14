@@ -1,7 +1,4 @@
-export type NoteInputModel = {
-  title: string;
-  text: string;
-}
+export type NoteInputModel = {[key: string]: string};
 
 export const DEFAULT_NOTE_INPUT_MODEL = {
   title: '',
