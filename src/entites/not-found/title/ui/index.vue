@@ -3,14 +3,14 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-  <div class="page-not-found-header">
+  <div class="not-found-page-header">
     <h1>Page not found!</h1>
     <RouterLink to="/">Go back</RouterLink>
   </div>
 </template>
 
 <style>
-.page-not-found-header {
+.not-found-page-header {
   display: flex;
   flex-direction: column;
   align-items: center;
