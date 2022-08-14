@@ -1,11 +1,22 @@
 <script setup lang="ts">
+import { ref, watchEffect } from 'vue';
+
 const props = defineProps({
-  placeholder: String,
+  value: String,
 });
+
+const emit = defineEmits(['input']);
+
+const innerValue = ref(props.value || '');
+
+watchEffect(() => {
+  emit('input', innerValue.value);
+});
+
 </script>
 
 <template>
-  <input class="note-text" :placeholder="props.placeholder" type="text">
+  <input class="note-text" :placeholder="props.placeholder" v-model="innerValue" type="text">
 </template>
 
 <style>
