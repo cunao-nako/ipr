@@ -1,5 +1,5 @@
 type listItem = {
-  key: number;
+  key: string;
   title?: string;
   text: string;
 };
