@@ -44,7 +44,7 @@ defineEmits(['delete']);
 
 .note-title {
   letter-spacing: 0.00625em;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 500;
   line-height: 1.5rem;
   min-height: 38px;
