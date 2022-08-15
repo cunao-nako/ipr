@@ -54,4 +54,8 @@ const handleSubmit = () => {
   transition-property: background, border, opacity, box-shadow, transform;
   transition-timing-function: ease-in;
 }
+
+.form-container:focus {
+  outline: none;
+}
 </style>

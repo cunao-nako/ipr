@@ -27,4 +27,8 @@ defineEmits(['update:modelValue']);
   overflow: hidden;
   position: relative;
 }
+
+.note-text:focus {
+  outline: none;
+}
 </style>
