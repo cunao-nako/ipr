@@ -3,6 +3,9 @@ import { ref } from 'vue';
 import InputsBlock from '@/features/main/note-input/ui/InputsBlock.vue';
 import type { NoteInputModel } from '@/features/main/note-input/lib';
 import { DEFAULT_NOTE_INPUT_MODEL } from '@/features/main/note-input/lib';
+import useTodoListStore from '@/app/stores';
+
+const { addNewNote } = useTodoListStore();
 
 const formIsVisible = ref(false);
 
@@ -21,7 +24,10 @@ const hideForm = () => {
   formIsVisible.value = false;
 };
 
-const handleSubmit = () => undefined;
+const handleSubmit = () => {
+  addNewNote(formData.value);
+  cleanFormData();
+};
 </script>
 
 <template>
