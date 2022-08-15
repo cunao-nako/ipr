@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Title from '@/entites/title';
 
-const titleValue = 'Notes you add appear here';
+const titleValue = 'Notes will appear here';
 </script>
 
 <template>
