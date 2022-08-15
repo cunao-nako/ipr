@@ -1,23 +1,24 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
+import { computed } from 'vue';
 import Note from '@/entites/note';
 import EmptyListNotification from '@/features/main/empty-list-notification/index';
 import useTodoListStore from '@/app/stores';
 
-const { todoList } = storeToRefs(useTodoListStore());
+const store = useTodoListStore();
+const { todoList } = storeToRefs(store);
+const { removeNote } = store;
 
-const handleDelete = (noteIndex: number) => {
-  console.debug('noteIndex', noteIndex);
-};
+const hasNotes = computed(() => !!todoList.value.length);
 </script>
 
 <template>
-  <div v-if="todoList.length" class="notes-container">
+  <div v-if="hasNotes" class="notes-container">
     <Note
-      v-for="{ index, key, title, text } in todoList"
+      v-for="({ key, title, text }, index) in todoList"
       :note-data="{ title, text }"
       :key="key"
-      @delete="handleDelete(index)"
+      @delete="removeNote(index)"
     />
   </div>
   <EmptyListNotification v-else />
