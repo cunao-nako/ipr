@@ -17,7 +17,11 @@ const useTodoListStore = defineStore('todoList', () => {
     }
   };
 
-  return { todoList, addNewNote };
+  const removeNote = (noteIndex: number) => {
+    todoList.value.splice(noteIndex, 1);
+  };
+
+  return { todoList, addNewNote, removeNote };
 });
 
 export default useTodoListStore;
