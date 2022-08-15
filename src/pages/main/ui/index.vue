@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import MainHeader from '@/features/main/header';
 import NoteInput from '@/features/main/note-input';
-import EmptyListNotification from '@/features/main/empty-list-notification';
+import Notes from '@/features/main/notes';
 
 </script>
 
@@ -9,6 +9,6 @@ import EmptyListNotification from '@/features/main/empty-list-notification';
   <div>
     <MainHeader/>
     <NoteInput/>
-    <EmptyListNotification/>
+    <Notes/>
   </div>
 </template>
