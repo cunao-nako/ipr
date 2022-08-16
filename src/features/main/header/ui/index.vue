@@ -2,7 +2,7 @@
 import MainLogo from '@/entites/main-logo';
 import Title from '@/entites/title';
 
-const titleValue = 'TODO List';
+const titleValue = 'Notes';
 </script>
 
 <template>
