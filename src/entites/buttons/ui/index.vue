@@ -1,6 +1,6 @@
 <template>
   <div class="form-buttons">
-    <input type="button" class="submit-button" value="Submit" @click="$emit('submit')"/>
+    <input type="button" class="submit-button" value="Add" @click="$emit('submit')"/>
     <input type="button" class="form-close-button" value="Close" @click="$emit('close')"/>
   </div>
 </template>
@@ -31,7 +31,7 @@
 
 .submit-button {
   color: #fff;
-  background-color: #007bff;
+  background-color: rgba(38, 255, 0, 0.99);
 }
 
 .submit-button:hover,
