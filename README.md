@@ -1,4 +1,4 @@
-# TODO List
+# Notes
 
 ## 🔴 [Go live demo](https://cunao-nako.github.io/todo-list/)
 
