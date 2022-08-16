@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { PropType } from 'vue';
 import { ref, watchEffect } from 'vue';
-import Input from '@/entites/input';
+import InputWrapper from '@/entites/input-wrapper';
 import Buttons from '@/entites/buttons/ui/index.vue';
 import type { NoteInputModel } from '@/features/main/note-input/lib';
 
@@ -25,8 +25,8 @@ watchEffect(() => {
 
 <template>
   <div class="form">
-    <Input v-if="props.isVisible" placeholder="Title..." v-model="innerValue.title" />
-    <Input placeholder="Take a note..." v-model="innerValue.text" @click="$emit('open')" />
+    <InputWrapper v-if="props.isVisible" placeholder="Title..." v-model="innerValue.title" />
+    <InputWrapper placeholder="Take a note..." v-model="innerValue.text" @click="$emit('open')" />
     <Buttons v-if="props.isVisible" @close="$emit('close')" @submit="$emit('submit')" />
   </div>
 </template>
