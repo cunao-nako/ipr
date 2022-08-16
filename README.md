@@ -1,6 +1,6 @@
 # Notes
 
-## 🔴 [Go live demo](https://cunao-nako.github.io/todo-list/)
+## 🔴 [Go live demo](https://cunao-nako.github.io/notes/)
 
 ## Stack n methodology :
 #### 1) [Feature-Sliced Design](https://feature-sliced.design) architectural methodology
