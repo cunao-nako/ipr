@@ -4,10 +4,14 @@ import { mount } from '@vue/test-utils';
 import Title from '@/entites/title';
 
 describe('Title', () => {
-  it('render with prop', () => {
-    const value = 'Test prop';
-    const wrapper = mount(Title, { props: { value } });
+  const value = 'Test prop';
+  const wrapper = mount(Title, { props: { value } });
 
+  it('render expected ui', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('render with prop', () => {
     expect(wrapper.text()).toMatch(value);
   });
 });
