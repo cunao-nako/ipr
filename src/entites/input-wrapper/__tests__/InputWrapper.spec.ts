@@ -7,7 +7,13 @@ describe('InputWrapper', () => {
   const modelValue = 'modelValue';
   const placeholder = 'placeholder';
 
-  const input = mount(InputWrapper, { props: { modelValue, placeholder } }).find('input').element;
+  const wrapper = mount(InputWrapper, { props: { modelValue, placeholder } });
+
+  it('render expected ui', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  const input = wrapper.find('input').element;
 
   it('render with props', () => {
     expect(input.placeholder).toBe(placeholder);
