@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`MainLogo > render expected img 1`] = `
+exports[`MainLogo > render expected ui 1`] = `
 VueWrapper {
   "__app": {
     "_component": {
